@@ -30,16 +30,6 @@ Update your `application.properties` or `application.yml`:
 👉 Replace `sk_test_your_stripe_secret_key_here` with your actual Stripe secret key (test or live).  
 👉 Never commit your real secret key to version control. Use environment variables or a secrets manager in production.
 
----
-
-## 🛠 Build & Run
-
-### Maven
-```bash
-mvn clean install
-mvn spring-boot:run
-
----
 **Example Flow**
 1️⃣ **The service creates a Stripe Price object:**
 Product: iPhone
@@ -50,3 +40,14 @@ Currency: INR
 
 3️⃣ **After successful payment, the user is redirected to:**
 https://www.amazon.in/
+
+
+---
+
+## 🛠 Build & Run
+
+### Maven
+```bash
+mvn clean install
+mvn spring-boot:run
+
