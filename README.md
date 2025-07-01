@@ -39,7 +39,7 @@ Update your `application.properties` or `application.yml`:
 mvn clean install
 mvn spring-boot:run
 
-
+---
 **Example Flow**
 1️⃣ **The service creates a Stripe Price object:**
 Product: iPhone
