@@ -21,12 +21,12 @@ public class StripeGateway implements PaymentGateway
     @Value("${stripe.api.key}")
     private String apiKey;
     @Override
-    public String generatePaymentLink()
+    public String generatePaymentLink(String name, String phonenumber, String email, Double amount, String Description)
     {
         try {
             Stripe.apiKey = this.apiKey;
 
-            Price price = getPrice();
+            Price price = getPrice(name,amount);
 
             PaymentLinkCreateParams params =
                     PaymentLinkCreateParams.builder()
@@ -48,17 +48,17 @@ public class StripeGateway implements PaymentGateway
         }
     }
 
-    private Price getPrice() {
+    private Price getPrice(String name,double amount) {
         try {
             PriceCreateParams params =
                     PriceCreateParams.builder()
                             .setCurrency("inr")
-                            .setUnitAmount(200000L)
+                            .setUnitAmount((long) amount)
                             .setProductData(
                                     PriceCreateParams
                                             .ProductData
                                             .builder()
-                                            .setName("iPhone")
+                                            .setName(name)
                                             .build()
                             )
                             .build();

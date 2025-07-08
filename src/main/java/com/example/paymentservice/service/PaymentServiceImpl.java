@@ -11,9 +11,9 @@ public class PaymentServiceImpl implements PaymentService {
         this.payementGatwaySelector = payementGatwaySelector;
     }
     @Override
-    public String initiatePayment() {
+    public String initiatePayment(String name, String phonenumber, String email, Double amount, String Description) {
         return payementGatwaySelector
                 .getPaymentGateway()
-                .generatePaymentLink();
+                .generatePaymentLink(name, phonenumber, email, amount, Description);
     }
 }
