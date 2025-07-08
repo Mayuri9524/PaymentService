@@ -24,14 +24,23 @@ The user can be redirected to this URL to complete the payment.
 Use the following test cards to simulate various payment scenarios. All cards use any future expiry date and CVC = 123 unless mentioned otherwise.
 Scenario	Card Number
 ✅ Success (India)	4000 0035 6000 0008
+
 ❌ Generic Decline	4000 0000 0000 0002
+
 ❌ Insufficient Funds	4000 0000 0000 9995
+
 ❌ Lost Card	4000 0000 0000 9987
+
 ❌ Stolen Card	4000 0000 0000 9979
+
 ❌ Expired Card	4000 0000 0000 0069
+
 ❌ Incorrect CVC	4000 0000 0000 0127
+
 ❌ Processing Error	4000 0000 0000 0119
+
 ❌ Incorrect Number	4242 4242 4242 4241
+
 ❌ Exceeding Velocity Limit	4000 0000 0000 6975
 
 🔁 **Testing Instructions**
